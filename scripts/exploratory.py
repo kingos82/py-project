@@ -4,6 +4,7 @@
 import matplotlib.pyplot as plt 
 import pandas as pd
 import math as m
+from sklearn import datasets
 
 def int_plus_1(int_var: int)->int:
     '''
@@ -31,3 +32,11 @@ if __name__ == '__main__':
     print(int_plus_1(var_1))
     var_2 = 20
     print(int_times_two(var_2))
+
+    #Load iris data set into main program
+    iris=datasets.load_iris()
+
+    #homework shift iris to panda dataset
+    #install plotly in virtual environment
+    # update requirements txt
+    # push all the changes to main branch in github 
