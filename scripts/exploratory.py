@@ -15,5 +15,19 @@ def int_plus_1(int_var: int)->int:
     int_return=int_var+1
     return int_return
 
+def int_times_two(int_var: int) -> int:
+    """
+    This function takes an integer as input and returns that integer times 2
+
+    Parameters: int_var
+    Returns: int_var_times_two
+    """
+
+    return int_var*2
+
 if __name__ == '__main__':
-    print(int_plus_1(10))
+    print("Hello! This is exploratory code")
+    var_1 = 10
+    print(int_plus_1(var_1))
+    var_2 = 20
+    print(int_times_two(var_2))
