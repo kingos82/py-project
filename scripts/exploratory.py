@@ -35,8 +35,16 @@ if __name__ == '__main__':
 
     #Load iris data set into main program
     iris=datasets.load_iris()
-
+    print(iris.keys)
     #homework shift iris to panda dataset
+    df0=pd.DataFrame(iris.data, columns=iris.feature_names)
+    print(df0)
+    
     #install plotly in virtual environment
+    #pip install plotly
+    
     # update requirements txt
+    #pip freeze>requirements.txt
+
     # push all the changes to main branch in github 
+    
