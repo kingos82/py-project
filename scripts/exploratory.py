@@ -1,50 +1,41 @@
 #Nadav Ivzan exploratory code
 
-#imports
-import matplotlib.pyplot as plt 
+#imports 
 import pandas as pd
-import math as m
 from sklearn import datasets
+import plotly as px 
 
-def int_plus_1(int_var: int)->int:
-    '''
-    this function takes an input and returns + 1
-    parameters: int_var
-    returns: int_return
-
-    ''' 
-    int_return=int_var+1
-    return int_return
-
-def int_times_two(int_var: int) -> int:
+def cscat(p1: str, p2: str): 
     """
-    This function takes an integer as input and returns that integer times 2
+    choose scatter
+    this function generates a scatter plot of variables p1 & p2
 
-    Parameters: int_var
-    Returns: int_var_times_two
+    p1 is the first parameter 
+    p2 second parameter
+    
+    output scatter plot
     """
 
-    return int_var*2
+    fig=px.plot(data_frame=df0,
+        x=p1,
+        y=p2,
+        kind='scatter',
+        title=p1+' vs '+p2, #f"{p1} vs {p2}"
+        color="class")
+    return fig
 
 if __name__ == '__main__':
-    print("Hello! This is exploratory code")
-    var_1 = 10
-    print(int_plus_1(var_1))
-    var_2 = 20
-    print(int_times_two(var_2))
-
+ 
     #Load iris data set into main program
     iris=datasets.load_iris()
     print(iris.keys)
+
     #homework shift iris to panda dataset
     df0=pd.DataFrame(iris.data, columns=iris.feature_names)
-    print(df0)
-    
-    #install plotly in virtual environment
-    #pip install plotly
-    
-    # update requirements txt
-    #pip freeze>requirements.txt
+    df0['class']=iris.target
 
-    # push all the changes to main branch in github 
+    map_dic={0:"setosa", 1:"versicolor", 2:"virginica"}
+
+    df0['class']=df0['class'].map(map_dic)
+
     
