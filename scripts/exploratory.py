@@ -37,11 +37,11 @@ def cbox(p1: str):
     """
 
     fig=px.plot(data_frame=df0,
-        x=p1,
-        y=p2,
+        x="class",
+        y=p1,
         kind='box',
-        title=p1+' vs '+p2, #f"{p1} vs {p2}"
-        color="class")
+        title=p1)
+        #color="class")
     return fig
 
 if __name__ == '__main__':
@@ -75,8 +75,9 @@ if __name__ == '__main__':
         p2=input('Enter 1 of 3 parameters: '+p0)
 
         f0=cscat(p1, p2)
+        f0.show()
         f1=cbox(p1)
-
+        f1.show()
 
     except:
         print('wrong input')
