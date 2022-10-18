@@ -3,7 +3,7 @@ from dash import html
 from dash import dcc
 import plotly.express as px
 import pandas as pd
-import exploratory
+import scripts.exploratory as exploratory
 from dash.dependencies import Input, Output
 
 #data reading
