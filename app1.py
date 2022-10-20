@@ -27,41 +27,34 @@ app.layout = html.Div([
              # This div contains a header H1, a dropdown to select the kind of plot and the plot
                 html.H1("Iris Dashboard", style=title_style),  
 
-                html.Div([ 
+                html.Div([
                     html.Div([
-                        html.Div([
-                            dcc.Graph(id='cbox_p1'),
-                                ], className="four columns"),
-                        html.Div([], className="four columns"),
-                        html.Div([
-                            html.P("select the first variable"),
-                            dcc.Dropdown(
+                        html.P("select the first variable"),
+                        dcc.Dropdown(
                                 id='p1',
                                 options=['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'],
                                 value= 'sepal length (cm)'),
-                                ], className="four columns")               
-                            ], className="row"),
+                            ], className="six columns"),
                     html.Div([
-                        html.Div([], className="eight columns"),
-                        html.Div([
-                            dcc.Graph(id='cscat_p1_p2'),
-                                ], className="eight columns"),
-                        html.Div([], className="eight columns")
-                            ], className="row"),
-                    html.Div([
-                        html.Div([
                         html.P("select the second variable"),
                         dcc.Dropdown(
                                 id='p2',
                                 options=['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'],
-                                value= 'petal width (cm)') 
-                                ], className = "four columns"),
-                        html.Div([], className = "four columns"),
-                        html.Div([
-                            dcc.Graph(id='cbox_p2')
-                                ], className = "four columns")
-                            ], className="row")
-                        ], className="column")
+                                value= 'petal width (cm)')                                
+                            ], className="six columns"),
+                    ], className="row"),
+                    
+                html.Div([ 
+                    html.Div([               
+                        dcc.Graph(id='cbox_p1'),
+                            ], className="four columns"),
+                    html.Div([
+                        dcc.Graph(id='cscat_p1_p2'),
+                            ], className="four columns"),
+                    html.Div([
+                    dcc.Graph(id='cbox_p2')
+                            ], className="four columns")
+                        ], className="row")
                     ])
 
 @app.callback(
