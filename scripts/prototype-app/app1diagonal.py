@@ -27,7 +27,7 @@ app.layout = html.Div([
              # This div contains a header H1, a dropdown to select the kind of plot and the plot
                     html.H1("Iris Dashboard", style=title_style),
                     html.Div([
-                        html.Div([
+                        html.Nav([
                             html.P("select the first variable"),
                             dcc.Dropdown(
                                     id='p1',
@@ -44,21 +44,30 @@ app.layout = html.Div([
                             ], className="row"),                  
                     html.Div([
                         html.Div([
-                            dcc.Graph(id='cbox_p1'),
-                                ],  style={"flex": "1", "align-items":"left","justify-content":"left", "width": "200px", "height":"200px"}),
+                                html.Div([
+                                    dcc.Graph(id='cbox_p1'),
+                                    ], style={"flex": "1", "align-items":"left","justify-content":"left", 'flex-direction': 'column',"width": "600px", "height":"400px"})
+                                ], style={'flex': '1', 'flex-direction': 'row'} ),
+                        
+                        
                         html.Div([
-                            dcc.Graph(id='cscat_p1_p2'),
-                                ], style={"flex": "1", "align-items":"center","justify-content":"center", "width": "200px", "height":"200px"}),
 
-                            ], style={'flex': '1', 'flex-direction': 'row'}),
+                            html.Div([
+                                    dcc.Graph(id='cscat_p1_p2'),
+                                        ], style={"flex": "1",'flex-direction': 'column', "width": "600px", "height":"400px"}),
+
+                                    ], style={'flex': '1', 'flex-direction': 'row', "align-items":"center","justify-content":"center"}),
+                        
                     
                         html.Div([
                         
 
-                        html.Div([
-                            dcc.Graph(id='cbox_p2')
-                                ], style={"flex": "1", "align-items":"right","justify-content":"right", "width": "200px", "height":"200px"})
-                            ], style={'flex': '1', 'flex-direction': 'row'})
+                                html.Div([
+                                    dcc.Graph(id='cbox_p2')
+                                        ], style={"flex": "1", "align-items":"right","justify-content":"right", 'flex-direction': 'column',"width": "600px", "height":"400px"})
+                                ], style={'flex': '1', 'flex-direction': 'row'})
+
+                        ]),
                         
                     ])
 
