@@ -16,7 +16,7 @@ the commands below assume you are using a terminal (command line for linux, anac
 using [conda](https://docs.conda.io/en/latest/miniconda.html) create a virtual environment 
 
 ```
-conda create -n vnv python==3.7 
+conda create -n vnv python==3.10 
 ```
 
 clone this repository in your local computer and change directories into py project

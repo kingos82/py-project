@@ -18,11 +18,12 @@ title_style = {
 }
 
 
-
+print("initializing app")
 # Intialize app
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+print("initializing server")
 server = app.server
-
+print("initializing layout")
 app.layout = html.Div([
              # This div contains a header H1, a dropdown to select the kind of plot and the plot
                 html.H1("Iris Dashboard", style=title_style),  
